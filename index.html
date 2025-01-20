@@ -7,7 +7,7 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         // 카카오 SDK 초기화
-        Kakao.init('d111bd65287402e276d68e9bea0ebd62'); // 여기에 실제 카카오 앱 키를 입력하세요.
+        Kakao.init('d111bd65287402e276d68e9bea0ebd62'); // 실제 카카오 앱 키 입력
         console.log(Kakao.isInitialized()); // 초기화 확인
 
         // 공유 기능 함수
@@ -15,12 +15,12 @@
             Kakao.Link.sendDefault({
                 objectType: 'feed',
                 content: {
-                    title: '데일리쿠키 같이 할래요?.',
-                    description: '매일 카톡으로 받는 영어/일본어',
-                    imageUrl: '이미지 URL',  // 이미지 URL 입력
+                    title: 'Daily Cookie 방문하기',
+                    description: '매일매일 새로운 영어를 배워보세요!',
+                    imageUrl: 'https://ibb.co/pr20CHV',  // 여기에 적절한 이미지 URL을 입력하세요
                     link: {
-                        mobileWebUrl: 'https://dailycookie.co.kr',  // 모바일 웹 URL 입력
-                        webUrl: 'https://dailycookie.co.kr'  // 웹 URL 입력
+                        mobileWebUrl: 'https://dailycookie.co.kr/',
+                        webUrl: 'https://dailycookie.co.kr/'
                     }
                 },
                 buttons: [
@@ -37,7 +37,8 @@
     </script>
 </head>
 <body>
-    <h1>KakaoTalk Link Share Example</h1>
-    <button onclick="sendKakaoLink()">카카오톡 공유하기</button>
+    <h1>Daily Cookie 공유하기</h1>
+    <button onclick="sendKakaoLink()">카카오톡으로 공유하기</button>
 </body>
 </html>
+
