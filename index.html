@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KakaoTalk Share Example</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        // 카카오 SDK 초기화
+        Kakao.init('d111bd65287402e276d68e9bea0ebd62'); // 여기에 실제 카카오 앱 키를 입력하세요.
+        console.log(Kakao.isInitialized()); // 초기화 확인
+
+        // 공유 기능 함수
+        function sendKakaoLink() {
+            Kakao.Link.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: '데일리쿠키 같이 할래요?.',
+                    description: '매일 카톡으로 받는 영어/일본어',
+                    imageUrl: '이미지 URL',  // 이미지 URL 입력
+                    link: {
+                        mobileWebUrl: 'https://dailycookie.co.kr',  // 모바일 웹 URL 입력
+                        webUrl: 'https://dailycookie.co.kr'  // 웹 URL 입력
+                    }
+                },
+                buttons: [
+                    {
+                        title: '웹사이트 방문',
+                        link: {
+                            mobileWebUrl: 'https://dailycookie.co.kr/',
+                            webUrl: 'https://dailycookie.co.kr/'
+                        }
+                    }
+                ]
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>KakaoTalk Link Share Example</h1>
+    <button onclick="sendKakaoLink()">카카오톡 공유하기</button>
+</body>
+</html>
